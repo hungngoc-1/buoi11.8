@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập mảng một chiều</title>
+</head>
+<body>
+    <script>
+        let n = Number(prompt("Nhập số phần tử của mảng:"));
+        let a = [];
+        for (let i = 0; i < n; i++) {
+            a[i] = Number(prompt(`Nhập phần tử thứ ${i + 1}:`));
+        }
+        document.write("Mảng vừa nhập: " + a + "<br>");
+      
+        let daoNguoc = [...a].reverse();
+        document.write("Mảng sau khi đảo ngược: " + daoNguoc + "<br>");
+
+        let tangDan = [...a].sort((x, y) => x - y);
+        document.write("Mảng sau khi sắp xếp tăng dần: " + tangDan + "<br>");
+
+        let tong = a.filter(b => b % 2 === 0).reduce((tong, num) => tong + num, 0);
+        document.write("Tổng các phần tử chẵn trong mảng: " + tong + "<br>");
+
+        let x = Number(prompt("Nhập một phần tử bất kỳ để kiểm tra:"));
+        let kiemTra = [];
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] === x) {
+                kiemTra.push(i);
+            }
+        }
+        if (kiemTra.length > 0) {
+            document.write(`Phần tử ${x} có trong mảng tại vị trí: ${kiemTra}<br>`);
+        } else {
+            document.write(`Phần tử ${x} không có trong mảng.<br>`);
+        }
+    </script>
+</body>
+</html>
